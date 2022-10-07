@@ -61,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.nav_categories:
                         replaceFragment(new cataegoryFragments());
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.nav_aboutus:
+                        replaceFragment(new fragment_aboutus());
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.nav_language:
+                        replaceFragment(new fragment_language());
+                        drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
 

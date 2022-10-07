@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/material_login"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginStart="145dp"
@@ -128,10 +128,10 @@
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+        app:layout_constraintTop_toBottomOf="@+id/material_login" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="142dp"
@@ -151,7 +151,6 @@
         android:text="Do not have an account?"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/textSignUp"
         app:layout_constraintTop_toBottomOf="@+id/materialButton2" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
