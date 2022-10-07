@@ -12,6 +12,8 @@ import com.google.android.material.button.MaterialButton;
 public class login extends AppCompatActivity {
     MaterialButton material_login;
     TextView textLogin;
+    TextView textSignup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,7 @@ public class login extends AppCompatActivity {
 
         material_login=findViewById(R.id.material_login);
         textLogin=findViewById(R.id.textSignUp);
+        textSignup=findViewById(R.id.textSignUp);
         material_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,12 +30,15 @@ public class login extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        textLogin.setOnClickListener(new View.OnClickListener() {
+
+        textSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(login.this,RegistrationPage.class);
                 startActivity(i);
             }
         });
+
+
     }
 }
