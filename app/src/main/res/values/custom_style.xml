@@ -7,8 +7,7 @@
         <item name="strokeWidth">7dp</item>
     </style>
 
-    <style name="Theme.ClassifiedAppMain.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
+<!--    Making th picture in circle shape-->
+
+    
 </resources>
