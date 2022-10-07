@@ -57,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_categories:
                         Log.i("MENU_DRAWER_TAG","Post Business Item is Clicked");
                         drawerLayout.closeDrawer(GravityCompat.START);
-
-
                 }
 
                 return true;

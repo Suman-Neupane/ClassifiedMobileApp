@@ -6,5 +6,8 @@
         <item name="strokeColor">@color/white</item>
         <item name="strokeWidth">7dp</item>
     </style>
+
+<!--    Making th picture in circle shape-->
+
     
 </resources>

@@ -10,5 +10,8 @@ public class Contactus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contactus);
+
+
+        getSupportActionBar().setTitle("Contact Us");
     }
 }
