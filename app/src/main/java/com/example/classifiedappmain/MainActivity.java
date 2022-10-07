@@ -1,16 +1,20 @@
 package com.example.classifiedappmain;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import android.widget.Toast;
+ import androidx.appcompat.widget.Toolbar;
+
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -34,10 +38,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-//        toolbar = findViewById(R.id.)
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigationView);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.menu_Open,R.string.close_menu);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.menu_Open,R.string.close_menu);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -47,20 +52,42 @@ public class MainActivity extends AppCompatActivity {
 
                 switch(item.getItemId()){
                     case R.id.nav_home:
-                        Log.i("MENU_DRAWER_TAG","HOME item is clicked");
-                        setContentView(R.layout.activity_main);
-                        drawerLayout.closeDrawer(GravityCompat.START);
+                        Toast.makeText(MainActivity.this,"Home Selected",Toast.LENGTH_SHORT).show();
+                        break;
                     case R.id.nav_post_business:
                         Log.i("MENU_DRAWER_TAG","Post Business Item is Clicked");
                         drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
 
                     case R.id.nav_categories:
-                        Log.i("MENU_DRAWER_TAG","Post Business Item is Clicked");
-                        drawerLayout.closeDrawer(GravityCompat.START);
+                        replaceFragment(new cataegoryFragments());
+                        break;
+
+
+
                 }
 
                 return true;
             }
         });
+
+
     }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }else {
+            super.onBackPressed();
+        }
+    }
+
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container,fragment);
+        fragmentTransaction.commit();
+    }
+
 }
